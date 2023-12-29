@@ -126,11 +126,12 @@ public class BlogDAO {
             if(connection ==null){
                 System.out.println("connection is null");
             }
-            String sql = "delete from blog where blogID = ?";
+
+            String sql = "delete from comment where blogID = ?";
             pstmt = (PreparedStatement)connection.prepareStatement(sql);
             pstmt.setString(1,id);
             pstmt.executeUpdate();
-            String sql2 = "delete from comment where blogID = ?";
+            String sql2 = "delete from blog where blogID = ?";
             pstmt = (PreparedStatement)connection.prepareStatement(sql2);
             pstmt.setString(1,id);
             pstmt.executeUpdate();
